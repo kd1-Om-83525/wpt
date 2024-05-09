@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Assignment_05</title>
+  </head>
+  <body>
+    <div style="height: 100; width: 100" id="mydiv">
+      <img src="car.png" height="100px" width="100px" />
+    </div>
+    <div
+      style="
+        width: 500px;
+        height: 20px;
+        background-color: black;
+        position: absolute;
+        top: 108px;
+      "
+    >
+      <br />
+      <br />
+      <br />
+      <input type="button" value="start car" onclick="start()" />
+      <input type="button" value="stop car" onclick="stop()" />
+    </div>
+
+    <script>
+      var counter = 0;
+      var countertop = 0;
+      var queueNoArray = new Array();
+      var ref = document.getElementById("mydiv");
+      function start() {
+        var queueNo = window.setInterval(KeepCounting, 100);
+        console.log("Q Created with No " + queueNo);
+        queueNoArray.push(queueNo);
+      }
+      function stop() {
+        var queueNo = queueNoArray.pop();
+        window.clearInterval(queueNo);
+        console.log("Q Destroyed with No " + queueNo);
+      }
+      function KeepCounting() {
+        counter = counter + 1;
+
+        if (counter < 1000) {
+          ref.style.marginLeft = counter + "px";
+        } else if (counter > 1117 && countertop < 350) {
+          countertop = countertop + 1;
+          ref.style.rotate = counter + "deg";
+          ref.style.marginTop = countertop + "px";
+        } else {
+        }
+      }
+    </script>
+  </body>
+</html>
