@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <center>
+        <h3 ><b>CALCULATOR</h3></b>
+        <table style="border: 2px solid black;width: 200px;height: 200px; background-color:darkgray;">
+            <tr>
+                <td colspan="2">Enter number 1:</td>
+                <td colspan="2"><input type="number" id="number1"></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+            <tr>
+                <td colspan="2">Enter number 2:</td>
+                <td colspan="2"><input type="number" id="number2"></td>
+                
+            </tr>
+            <tr>
+                <td colspan="2">Result:</td>
+                <td colspan="2"><input type="number" id="Result"></td>
+                
+            </tr>
+            <tr>
+             <td><br><br></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="Addition" id="Addbtn" onclick="Add()"></td>
+                <td><input type="button" value="Subtraction" id="Subbtn" onclick="Sub()"></td>
+                <td><input type="button" value="Multiplication" id="Mulbtn" onclick="Mul()"></td>
+                <td><input type="button" value="Division" id="Divbtn" onclick="Div()"></td>
+                <td><input type="button" value="clear" id="clearbtn" onclick="Clear()"></td>
+
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </center>
+     
+    <script>
+      function Add(){
+        var refTonum1 = document.getElementById("number1");
+        var refTonum2 = document.getElementById("number2");
+        var refToResult = document.getElementById("Result");
+
+        var result = parseInt(refTonum1.value)+parseInt(refTonum2.value);
+        refToResult.value= result;
+      }
+
+      function Sub(){
+        var refTonum1 = document.getElementById("number1");
+        var refTonum2 = document.getElementById("number2");
+        var refToResult = document.getElementById("Result");
+
+        var result = (refTonum1.value)-(refTonum2.value);
+        refToResult.value= result;
+      }
+      function Mul(){
+        var refTonum1 = document.getElementById("number1");
+        var refTonum2 = document.getElementById("number2");
+        var refToResult = document.getElementById("Result");
+
+        var result = (refTonum1.value)*(refTonum2.value);
+        refToResult.value= result;
+      }
+      function Div(){
+        var refTonum1 = document.getElementById("number1");
+        var refTonum2 = document.getElementById("number2");
+        var refToResult = document.getElementById("Result");
+
+        var result = (refTonum1.value)/(refTonum2.value);
+        refToResult.value= result;
+      }
+      
+      function Clear(){
+        var refTonum1 = document.getElementById("number1");
+        var refTonum2 = document.getElementById("number2");
+        var refToResult = document.getElementById("Result");
+
+        refTonum1.value = "";
+        refTonum2.value = "";
+        refToResult.value ="";
+      }
+
+      
+    </script>
+</body>
+</html>
